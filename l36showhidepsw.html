@@ -1,0 +1,112 @@
+<!-- 30 October -->
+<!-- 31 October -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Show & Hide Password</title>
+  <!-- fontawesome cdnjs -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style type="text/css">
+    * {
+      font-family: sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 500px;
+      padding: 20px;
+
+      background-color: #f0f0f0;
+    }
+
+    .form-group label {
+      display: block;
+
+      margin-bottom: 5px;
+    }
+
+    .form-control {
+      width: 100%;
+
+      margin-bottom: 10px;
+
+      outline: none;
+    }
+
+    .justify-content-end {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .eyes {
+      font-size: 1rem;
+
+      user-select: none;
+
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form action="" method="">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" class="form-control" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" class="form-control">
+        <span id="eyes" class="eyes"><i class="fas fa-lock"> Show Password</i></span>
+
+      </div>
+
+      <div class="justify-content-end">
+        <button type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- jquery js1 -->
+  <script src="./libs/jquery-3.7.1.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      $("#eyes").click(function () {
+        var getType = $("#password").attr("type");
+        // console.log(getType);
+
+        if (getType === "password") {
+          getType = "text";
+          $("#eyes").html(`<i class="fas fa-lock-open"> Hide Password</i>`)
+        } else {
+          getType = "password";
+          $("#eyes").html(`<i class="fas fa-lock"> Show Password</i>`)
+        }
+
+        $("#password").attr("type", getType);
+      });
+
+
+
+
+    });
+  </script>
+</body>
+
+</html>

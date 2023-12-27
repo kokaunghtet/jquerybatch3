@@ -1,0 +1,133 @@
+<!-- 1 November -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Multi Phone Number</title>
+  <!-- fontawesome cdnjs -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style type="text/css">
+    * {
+      font-family: sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 90vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 500px;
+      padding: 15px;
+    }
+
+    .form-group label {
+      display: block;
+
+      margin-bottom: 5px;
+    }
+
+    .form-control {
+      width: 80%;
+
+      margin: 10px 0;
+      padding: 5px;
+
+      font-size: 15px;
+
+      outline: none;
+    }
+
+    .addbtn,
+    .removebtn {
+      margin: 0 5px;
+      padding: 8px 10px;
+
+      background-color: green;
+      color: #fff;
+
+      border-radius: 5px;
+
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .removebtn {
+      background-color: red;
+    }
+
+    .disabled {
+      background-color: grey;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h3>Multi Phone Number</h3>
+    <form action="" method="">
+      <div class="form-group phonenumbers">
+        <label for="phones">Mobile Number</label>
+        <input type="text" name="phones[]" id="phones" class="form-control" autocomplete="off">
+        <a href="javascript:void(0)" class="addbtn"><i class="fas fa-plus"></i></a>
+      </div>
+    </form>
+  </div>
+
+  <!-- jquery js1 -->
+  <script src="./libs/jquery-3.7.1.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      var maxNumber = 5;
+      var addBtn = $(".addbtn");
+      var phoneBox = $(".phonenumbers");
+      var newPhones1;
+      var idx = 1;
+
+      // Add
+      $(addBtn).click(function () {
+        // idx++;
+        // console.log(idx);
+
+        if (idx < maxNumber) {
+          idx++;
+
+          newPhones1 = `<div><input type="text" name="phones[]" id="phones${idx}" class="form-control" autocomplete="off">
+        <a href="javascript:void(0)" class="removebtn"><i class="fas fa-trash-alt"></i></a></div>`;
+          phoneBox.append(newPhones1);
+
+        } else {
+          addBtn.addClass("disabled");
+        }
+
+      });
+
+      // $(".removebtn").click(function () {
+      //   console.log("Hey");
+      // });
+
+      $(phoneBox).on("click", ".removebtn", function () {
+
+        // console.log("Hey");
+        $(this).parent().remove();
+        idx--;
+
+        if (idx < maxNumber) {
+          $(addBtn).removeClass("disabled");
+        }
+
+      });
+
+    });
+  </script>
+</body>
+
+</html>

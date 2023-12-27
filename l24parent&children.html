@@ -1,0 +1,151 @@
+<!-- 18 October -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Parent & Children Method</title>
+  <style type="text/css">
+    body {
+      font-family: sans-serif;
+
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+
+      width: 900px;
+      padding: 20px;
+
+      background-color: #f0f0f0;
+
+    }
+
+    .box {
+      width: 150px;
+      height: 300px;
+    }
+
+    .square1 {
+      background-color: green;
+    }
+
+    .square2 {
+      background-color: orange;
+    }
+
+    .square3 {
+      background-color: blue;
+    }
+
+    .square4 {
+      background-color: violet;
+    }
+
+    .square5 {
+      background-color: brown;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>Parent & children Method</h1>
+    <p>This is awesome jQuery 3.7.1</p>
+  </div>
+
+  <div class="container">
+    <div class="box square1">Box 1</div>
+    <hr>
+    <div class="box square2">Box 2</div>
+    <hr>
+    <div class="box square3">Box 3</div>
+    <hr>
+    <div class="box square4">Box 4</div>
+    <hr>
+    <div class="box square5">Box 5</div>
+    <hr>
+
+  </div>
+
+  <div>
+    <p>Hey guys!!! What's your plan for tommorow?</p>
+  </div>
+
+
+  <script src="./libs/jquery-3.7.1.min.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      // parent()
+      // $(".box").click(function () {
+      //   $(this).parent().css({
+      //     "background-color": "steelblue",
+      //     "box-shadow": "5px 5px 10px rgba(0,0,0,0.5)",
+      //     "border-radius": "5px"
+      //   });
+      // });
+
+      // children()
+      // $(".container").click(function () {
+      //   $(this).children().css("background-color", "darkblue");
+      // });
+
+      // $(".container").click(function () {
+      //   $(this).children(".square1, .square5").css("background-color", "steelblue");
+      // });
+
+      // $(".container").click(function () {
+      //   $(this).children(".box:nth-of-type(odd)").css("background-color", "steelblue");
+      // });
+
+
+      // siblings()
+      // $(".square1").click(function () {
+      //   $(this).siblings().css("background-color", "black");
+      // });
+
+      // $(".square1").click(function () {
+      //   $(this).siblings(".square4").css("background-color", "black");
+      // });
+
+      // $(".square1").click(function () {
+      //   $(this).siblings(".square3, .square5").css("background-color", "black");
+      // });
+
+      // even / odd / n
+
+      // $(".container").click(function () {
+      //   $(".box:nth-of-type(even)").css("background-color", "black");
+      // });
+
+      // $(".container").click(function () {
+      //   $(".box:nth-of-type(odd)").css("background-color", "black");
+      // });
+
+      // $(".container").click(function () {
+      //   $(".box:nth-of-type(4)").css("background-color", "black");
+      // });
+
+
+
+
+
+    });
+  </script>
+</body>
+
+</html>
+
+<!-- 18PC -->

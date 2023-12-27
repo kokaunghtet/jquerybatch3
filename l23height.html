@@ -1,0 +1,135 @@
+<!-- 18 October -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Height Method</title>
+  <style type="text/css">
+    body {
+      font-family: sans-serif;
+
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .box1 {
+      width: 100px;
+      height: 100px;
+
+      margin: 5px;
+      padding: 10px;
+
+      border: 5px solid #000;
+    }
+
+    .box2 {
+      width: 100px;
+      height: 200px;
+    }
+
+    .box3 {
+      width: 100px;
+      height: 300px;
+    }
+
+    .box4 {
+      width: 100px;
+      height: 400px;
+    }
+
+    .box5 {
+      width: 100px;
+      height: 500px;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .green {
+      background-color: green;
+    }
+
+    .orange {
+      background-color: orange;
+    }
+
+    .blue {
+      background-color: blue;
+    }
+
+    .violet {
+      background-color: violet;
+    }
+
+    .text-center {
+      text-align: center;
+      font-size: 2rem;
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box1 red">Box 1</div>
+    <div class="box2 green">Box 2</div>
+    <div class="box3 orange">Box 3</div>
+    <div class="box4 blue">Box 4</div>
+    <div class="box5 violet">Box 5</div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <script src="./libs/jquery-3.7.1.min.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      $(".box1").click(function () {
+        console.log(`Box1's height = ${$(this).height()}.`);
+        console.log(`Box1's inner height = ${$(this).innerHeight()}.`);
+        console.log(`Box1's outer height = ${$(this).outerHeight()}.`);
+
+      });
+
+      $(".box2").click(function () {
+        console.log(`box2's height = ${$(this).height()}.`);
+        console.log(`box2's inner height = ${$(this).innerHeight()}.`);
+        console.log(`box2's outer height = ${$(this).outerHeight()}.`);
+
+      });
+
+      $(".box3, .box4").click(function () {
+        console.log(`box height = ${$(this).height()}.`);
+        console.log(`box inner height = ${$(this).innerHeight()}.`);
+        console.log(`box outer height = ${$(this).outerHeight()}.`);
+
+      });
+
+      let cusHeight = 1000;
+      $(".box5").click(function () {
+
+        $(this).height(cusHeight).addClass("text-center");
+        console.log(`Box5's height ${$(this).height()}`);
+
+      });
+
+    });
+  </script>
+</body>
+
+</html>

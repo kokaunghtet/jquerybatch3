@@ -1,0 +1,36 @@
+<!-- 10 October -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Before & After Method</title>
+</head>
+
+<body>
+  <h1>Hello Burma</h1>
+  <h1>Hello Thailand</h1>
+
+  <button type="button" id="beforebtn">Before Insert</button>
+  <button type="button" id="afterbtn">After Insert</button>
+
+
+
+  <script src="./libs/jquery-3.7.1.min.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      $("#beforebtn").click(function () {
+        $("h1").before("Hello World ");
+      });
+
+      $("#afterbtn").click(function () {
+        $("h1").before("<p>Hey Earth</p>");
+      });
+
+    });
+  </script>
+</body>
+
+</html>

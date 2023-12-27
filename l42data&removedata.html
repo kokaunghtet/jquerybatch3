@@ -1,0 +1,158 @@
+<!-- 2 November -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Data & Remove Data</title>
+  <style type="text/css">
+    * {
+      font-family: sans-serif;
+    }
+
+    body {
+      height: 90vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 900px;
+      padding: 20px;
+
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div>
+      <h3>Student Data</h3>
+    </div>
+
+    <ul>
+      <li>Name = <span data-name="Mr.John Doe">???</span></li>
+      <li>Age = <span data-age="25">???</span></li>
+      <li>Phone = <span data-phone-number="09799999999">???</span></li>
+    </ul>
+
+    <div>
+      <button type="button" class="newcaption-btn">New Caption</button>
+      <button type="button" class="removecaption-btn">Remove Caption</button>
+      <button type="button" class="showinfo-btn">Show Info</button>
+      <button type="button" class="attributeid-btn" data-id="123456">Attribute id</button>
+      <button type="button" class="dataid-btn" data-id="654321">Data Id</button>
+      <button type="button" class="object-btn">Object</button>
+      <button type="button" class="increaseid-btn" data-id="1">Increase Id</button>
+    </div>
+  </div>
+
+  <!-- jquery js1 -->
+  <script src="./libs/jquery-3.7.1.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      $(".newcaption-btn").click(function () {
+
+        // <div newcaption="customer Info"></div>
+        var setNewCap = $("div").data("newcaption", "Customers Infos");
+        var getNewCap = $("div").data("newcaption");
+        // console.log(getNewCap);
+        $("h3").text(getNewCap);
+
+        var sayHi = "Hello";
+        // console.log(sayHi);
+
+      });
+
+      $(".removecaption-btn").click(function () {
+        // console.log("hey");
+
+        // console.log(sayHi); //sayHi is not defined
+
+        // console.log(getNewCap); //getNewCap is not defined
+
+        console.log("Before removing Data =", $("div").data("newcaption"));
+
+        $("div").removeData("newcaption");
+
+        console.log("After removing Data", $("div").data("newcaption"));
+      });
+
+      $(".showinfo-btn").click(function () {
+        // console.log("Hey");
+
+        // $("ul li:first span").text("Mr. John Doe");
+        // console.log($("ul li:first span").attr("data-name"));
+        // console.log($("ul li:first span").data("name"));
+
+        var getName = $("ul li:first span").data("name");
+        var getAge = $("ul li:nth-child(2) span").data("age");
+        var getPhone = $("ul li:last span").data("phone-number");
+        console.log(getName, getAge, getPhone);
+        console.log(typeof getName, typeof getAge, typeof getPhone);
+
+        $("ul li:first span").text(getName);
+        $("ul li:nth-child(2) span").text(getAge);
+        $("ul li:last span").text(getPhone);
+
+      });
+
+      $(".attributeid-btn").click(function () {
+        var getAttrid = $(this).attr("data-id");
+        console.log(getAttrid, typeof getAttrid); // return the number 123456 by string data type
+      });
+
+      $(".dataid-btn").click(function () {
+        var getDataid = $(this).data("id");
+        console.log(getDataid, typeof getDataid); // return the number 65432` by number data type
+      });
+
+      $(".object-btn").click(function () {
+        $("div").data("info", {
+          objname: "Mr. John Doe",
+          objage: 35,
+          objphone: "09799999999"
+        });
+
+        $("ul li span:eq(0)").text($("div").data("info").objname);
+        $("ul li span:eq(1)").text($("div").data("info").objage);
+        $("ul li span:eq(2)").text($("div").data("info").objphone);
+
+      });
+
+      $(".increaseid-btn").click(function () {
+        // var getidmethod1 = $(this).data("id");
+        // console.log(getidmethod1, typeof getidmethod1);
+
+        // var getidmethod2 = $(this).data().id;
+        // console.log(getidmethod2, typeof getidmethod2);
+
+        // var getidmethod3 = $(this).data()["id"];
+        // console.log(getidmethod3, typeof getidmethod3);
+
+        // var getidmethod1 = $(this).data("id");
+        // getidmethod1++;
+        // console.log(getidmethod1); // 2
+
+        // var getidmethod2 = $(this).data().id;
+        // getidmethod2 += 1;
+        // console.log(getidmethod2); // 2
+
+        // var getidmethod2 = $(this).data().id++;
+        // console.log(getidmethod2); // 1 2 3 4
+
+        var getidmethod3 = $(this).data()["id"]++;
+        console.log(getidmethod3); // 1 2 3 4
+      });
+
+    });
+  </script>
+</body>
+
+</html>
+
+<!-- 2DD -->

@@ -1,0 +1,73 @@
+<!-- 1 November -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Extension Functions</title>
+  <!-- fontawesome cdnjs -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+  <div id="box1">
+    <h3>JQuery Extension Functions</h3>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum nostrum adipisci nihil impedit quaerat aliquam
+      minus unde corporis iste, labore asperiores temporibus aut perspiciatis eveniet quam et. Sint, exercitationem
+      ipsam! </p>
+  </div>
+
+  <div id="box2">
+    <h3>JQuery Extension Functions</h3>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum nostrum adipisci nihil impedit quaerat aliquam
+      minus unde corporis iste, labore asperiores temporibus aut perspiciatis eveniet quam et. Sint, exercitationem
+      ipsam! </p>
+  </div>
+
+  <div id="box3">
+    <h3>JQuery Extension Functions</h3>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum nostrum adipisci nihil impedit quaerat aliquam
+      minus unde corporis iste, labore asperiores temporibus aut perspiciatis eveniet quam et. Sint, exercitationem
+      ipsam! </p>
+  </div>
+
+
+  <!-- jquery js1 -->
+  <script src="./libs/jquery-3.7.1.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      // jQuery Extension Function
+      // jQuery.fn.extend()
+
+      $.fn.extend({
+        disabledselect: function () {
+          return this.css("user-select", "none");
+        },
+
+        selected: function () {
+          return this.css({
+            "background-color": "steelblue",
+            "color": "#fff"
+          })
+        }
+      });
+
+      $("#box1").disabledselect();
+      $("#box2").selected();
+
+      jQuery.fn.disabledselection = function () {
+        return this.css("user-select", "none");
+      }
+
+      $("#box3").disabledselection();
+    });
+  </script>
+</body>
+
+</html>
+
+<!-- 1EX -->
